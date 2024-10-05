@@ -5,7 +5,7 @@ baseURL = 'https://m0tunizin0.vercel.app/'
 languageCode = 'en-us'
 
 # This defines how dates are formatted
-defaultContentLanguage = "en-gb"
+defaultContentLanguage = "en-us"
 
 # Enable emojis globally
 enableEmoji = true
@@ -48,37 +48,37 @@ theme = "hugo-blog-awesome"
 		ordered = false # generates <ul> instead of <ol>
 
 ############################## English language ################################
-[Languages.en-gb]
+[Languages.en-us]
   languageName = "English"
-  languageCode = "en-gb"
+  languageCode = "en-us"
   contentDir = "content/en"
   weight = 1
 
-  [Languages.en-gb.menu]
-  # [[Languages.en-gb.menu.main]]
+  [Languages.en-us.menu]
+  # [[Languages.en-us.menu.main]]
   #   # The page reference (pageRef) is useful for menu highlighting
   #   # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
   #   pageRef="/"
   #   name = 'Home'
   #   url = '/'
   #   weight = 10
-  [[Languages.en-gb.menu.main]]
+  [[Languages.en-us.menu.main]]
     pageRef="posts"
     name = 'Posts'
     url = '/posts/'
     weight = 10
-  [[Languages.en-gb.menu.main]]
+  [[Languages.en-us.menu.main]]
     pageRef="categories"
     name = 'Categories'
     url = '/categories/'
     weight = 20
-  # [[Languages.en-gb.menu.main]]
+  # [[Languages.en-us.menu.main]]
   #   pageRef="about"
   #   name = 'About'
   #   url = '/about/'
   #   weight = 40
 
-[Languages.en-gb.params]
+[Languages.en-us.params]
   sitename = "M0 Blog"
   defaultColor = "dark" # set color mode: dark, light, auto
   # Setting it to 'auto' applies the color scheme based on the visitor's device color preference.If you don't specify anything, ignore this parameter, or leave it blank,
@@ -101,7 +101,7 @@ theme = "hugo-blog-awesome"
   # full - includes full blog post in the RSS feed. Generated using Hugo .Content .
   # By default (or if nothing is specified), summary is used.
 
-[Languages.en-gb.params.author]
+[Languages.en-us.params.author]
   avatar = "video/insider.mp4" # put the file in assets folder; also ensure that image has same height and width
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "M0 FIX"
@@ -109,7 +109,7 @@ theme = "hugo-blog-awesome"
   description = " 🌜 Bounty Hunter🌞Day ⩇⩇:⩇⩇ 🌛"
 
 # Allow to override webmanifest options
-[Languages.en-gb.params.webmanifest]
+[Languages.en-us.params.webmanifest]
   name = "M0 Blog" # will use "params.sitename" or "title" by default
   short_name = "M0 Blog" # same as name
   start_url = "/" # will use homepage url by default

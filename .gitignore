@@ -2,4 +2,3 @@ hugo_build.lock
 .hvm
 public/
 resources/
-.env

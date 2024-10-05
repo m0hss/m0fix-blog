@@ -1,5 +1,5 @@
 title = "M0 FIX"
-baseURL = 'https://blog.m0fix.me/'
+baseURL = 'https://m0tunizino.netlify.app/'
 
 # This is what goes in <html lang="">
 languageCode = 'en-us'

@@ -1,0 +1,20 @@
+{{ $avatar_img := .Site.Params.author.avatar }}
+{{ $avatar_img_alt := .Site.Params.author.name }}
+{{ $image := resources.Get $avatar_img }}
+<div class="author">
+  {{ with $image }}
+  {{ if eq .MediaType.SubType "svg" }}
+  <svg width="25em" height="25em" xmlns="http://www.w3.org/2000/svg">
+    <image width="25em" height="25em" href="{{ $image.RelPermalink }}" />
+  </svg>
+  {{ else }}
+  <video class="author-avatar" autoplay muted loop playsinline>
+    <source src="{{ .RelPermalink }}" type="{{ .MediaType.Type }}">
+    Your browser does not support the video tag.
+  </video>
+
+  {{ end }}
+  {{ end }}
+  <h2 class="author-name">{{ .Site.Params.author.intro }}</h2>
+  <p class="author-bio">{{ .Site.Params.author.description }}</p>
+</div>

@@ -5,6 +5,5 @@
       "GO_VERSION": "1.19.5"
     }
   },
- "buildCommand": "hugo --gc --minify",
- "installCommand": "amazon-linux-extras install golang1.19"
+ "buildCommand": "hugo --gc --minify"
 }

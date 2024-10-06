@@ -1,17 +1,9 @@
 {
-  "version": 2,
   "build": {
     "env": {
       "HUGO_VERSION": "0.135.0",
       "GO_VERSION": "1.19.5"
     }
   },
-  "builds": [
-    {
-      "config": {
-        "distDir": "public",
-        "buildCommand": "git submodule update --init --recursive && hugo --minify"
-      }
-    }
-  ]
+ "buildCommand": "hugo --gc --minify"
 }

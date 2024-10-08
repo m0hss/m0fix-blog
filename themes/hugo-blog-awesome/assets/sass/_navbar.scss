@@ -1,4 +1,32 @@
 // Navbar
+.hidden {
+  display: none;
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  position: absolute;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.active {
+  font-weight: bold;
+}
 .navbar {
     height: auto;
     max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));

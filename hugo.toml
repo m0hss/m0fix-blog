@@ -1,8 +1,9 @@
 title = "M0 FIX"
-baseURL = 'https://m0tunizin0.vercel.app/'
+baseURL = 'https://tn.m0fix.me/'
 
 # This is what goes in <html lang="">
 languageCode = 'en-us'
+
 
 # This defines how dates are formatted
 defaultContentLanguage = "en-us"
@@ -129,13 +130,13 @@ theme = "hugo-blog-awesome"
     # The page reference (pageRef) is useful for menu highlighting
     # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
   [[Languages.fr-fr.menu.main]]
-    pageRef="posts"
+    pageRef="postes"
     name = 'Articles'
     url = '/posts/'
     weight = 10
   [[Languages.fr-fr.menu.main]]
    pageRef="categories"
-    name = 'Categories'
+    name = 'Catégories'
     url = '/categories/'
     weight = 20
 

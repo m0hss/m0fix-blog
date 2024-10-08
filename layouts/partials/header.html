@@ -1,0 +1,108 @@
+<div class="navbar" role="navigation">
+  <nav class="menu" aria-label="Main Navigation">
+    <a href="{{ .Site.Home.Permalink }}" class="logo">
+      {{ partial "svgs/home.svg" (dict "height" 25 "width" 25) . }}
+    </a>
+    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+    <label for="menu-trigger">
+      <span class="menu-icon">
+        {{ partial "svgs/menu.svg" (dict "height" 25 "width" 25) . }}
+      </span>
+    </label>
+
+    <div class="trigger">
+      <ul class="trigger-container">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        {{ if and .URL .Name }}
+        <li>
+          <a class="menu-link {{ if or ($currentPage.IsMenuCurrent " main" .) ($currentPage.HasMenuCurrent "main" .)
+            }}active{{ end }}" href="{{ .URL }}">
+            {{ .Name }}
+          </a>
+          {{ if .HasChildren }}
+          <ul>
+            {{ range .Children }}
+            <li>
+              <a class="menu-link {{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}" href="{{ .URL }}">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </li>
+        {{ end }}
+        {{ end }}
+        <li class="menu-separator">
+          <span>|</span>
+        </li>
+      </ul>
+
+
+      <!-- Globe SVG for Language Selection -->
+      <div class="language-selector" aria-label="Select Language" tabindex="0">
+        <div class="globe-icon">
+          {{ partial "svgs/globe.svg" (dict "height" 18 "width" 18 ) }}
+        </div>
+        <ul class="language-dropdown">
+          {{ if .IsTranslated }}
+          {{ $siteLanguages := .Site.Languages }}
+          {{ $pageLang := .Page.Lang }}
+          {{ range .Page.AllTranslations }}
+          {{ $translation := . }}
+          {{ range $siteLanguages }}
+          {{ if eq $translation.Lang .Lang }}
+          <li class="lang-option">
+            <a href="{{ $translation.Permalink }}" id="{{ $translation.Language }}">
+              {{ .LanguageCode | upper }}
+            </a>
+          </li>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Language Selector -->
+      <!-- <div class="language-selector">
+        <div class="globe-icon">
+          {{ partial "svgs/globe.svg" (dict "height" 18 "width" 18 ) }}
+        </div>
+        <ul class="language-dropdown">
+          <li><a href="#" class="lang-option" data-lang="en">EN-US</a></li>
+          <li><a href="#" class="lang-option" data-lang="fr">FR-FR</a></li>
+        </ul>
+      </div> -->
+
+      <li class="menu-separator">
+        <span>|</span>
+      </li>
+      <a id="mode" href="#">
+        {{ partial "svgs/sun.svg" (dict "height" 21 "width" 21 "class" "mode-sunny" "title" "LIGHT") . }}
+        {{ partial "svgs/moon.svg" (dict "height" 21 "width" 21 "class" "mode-moon" "title" "DARK") . }}
+      </a>
+    </div>
+  </nav>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const languageSelector = document.querySelector('.language-selector');
+    const languageDropdown = document.querySelector('.language-dropdown');
+
+    languageSelector.addEventListener('click', function () {
+      languageDropdown.style.display = languageDropdown.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Optional: Close the dropdown if clicking outside
+    document.addEventListener('click', function (event) {
+      if (!languageSelector.contains(event.target)) {
+        languageDropdown.style.display = 'none';
+      }
+    });
+  });
+
+
+</script>
